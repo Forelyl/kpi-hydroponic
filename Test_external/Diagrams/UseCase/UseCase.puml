@@ -1,0 +1,140 @@
+@startuml
+left to right direction
+
+actor User
+actor Server
+
+rectangle "EmeraldWater" {
+  rectangle "LoginRegister" {
+    (Login) as Lg
+    (Register) as Rg
+    (Check if username is taken) as CheckUsernameTaken
+    (Check username correctness) as CheckUsename
+    (Check password correctness) as CheckPassword
+    (Get authToken) as Bearer
+
+    note "To add additional preventive mesurement against SQL injections" as SQLCheckNote1
+
+    (Check authToken) as O2auth
+
+
+    Lg --> CheckUsernameTaken : <<include>>
+    Lg --> CheckUsename : <<include>>
+    Lg --> CheckPassword : <<include>>
+    Lg --> Bearer : <<include>>
+
+    Rg --> CheckUsename : <<include>>
+    Rg --> CheckPassword : <<include>>
+    Rg --> Bearer : <<include>>
+
+    CheckUsename -- SQLCheckNote1
+    CheckPassword -- SQLCheckNote1
+
+  }
+
+  rectangle hydroponicOperations {
+    (Check if owned by user) as Owner
+
+    (Get/check for hydroponic errors) as Status
+    (Get colors for indicators) as Colors
+
+    (Hydroponics playground) as Playground
+
+    (Get all hydroponics for user) as GetAll
+    (Get one hydroponic for user) as GetOne
+
+    (Update all hydroponics for user) as UpdateAll
+    (Update one hydroponic for user) as UpdateOne
+
+    (Add hydroponic) as Add
+    (Check floatInputs) as FloatIn
+    (Check nonZeroFloatInputs) as NonZeroFloatIn
+    (Check text) as TextIn
+    (Check input fields) as In
+
+    (Delete hydroponic) as Delete
+
+    (Update hydroponic) as Update
+    (Prevent overflow) as PreventOver
+    (Prevent underflow) as PreventUnder
+    (Add 10% of Water) as SetAddWater
+    (Add 5% of Minerals) as SetAddMinerals
+    (Add 1°C) as SetAddTemperature
+    (Lower 1°C) as SetLowerTemperature
+    (Add 0.25pH acid) as SetAddAcid
+    (Add 0.25pH base) as SetLowerAcid
+    (Add 5% of Oxygen) as SetAddOxygen
+
+    note "To add additional preventive mesurement against SQL injections" as SQLCheckNote2
+  }
+  GetAll --> Owner : <<include>>
+  GetOne --> Owner : <<include>>
+  UpdateAll --> Owner : <<include>>
+  UpdateOne --> Owner : <<include>>
+  Add --> Owner : <<include>>
+  Delete --> Owner : <<include>>
+  Update --> Owner : <<include>>
+
+  Owner --> O2auth : <<include>>
+
+  In <-- FloatIn : <<extend>>
+  In <-- NonZeroFloatIn : <<extend>>
+  In <-- TextIn : <<extend>>
+
+  Add --> In : <<include>>
+
+  Update <-- SetAddWater : <<extend>>
+  Update <-- SetAddMinerals : <<extend>>
+  Update <-- SetAddTemperature : <<extend>>
+  Update <-- SetLowerTemperature : <<extend>>
+  Update <-- SetAddAcid : <<extend>>
+  Update <-- SetLowerAcid : <<extend>>
+  Update <-- SetAddOxygen : <<extend>>
+
+  SetAddWater --> PreventOver : <<include>>
+  SetAddMinerals --> PreventOver : <<include>>
+  SetAddTemperature --> PreventOver : <<include>>
+  SetLowerTemperature --> PreventUnder : <<include>>
+  SetAddAcid --> PreventOver : <<include>>
+  SetLowerAcid --> PreventUnder : <<include>>
+  SetAddOxygen --> PreventOver : <<include>>
+
+  Status --> GetAll : <<extend>>
+  Status --> GetOne : <<extend>>
+  Status --> UpdateAll : <<extend>>
+  Status --> UpdateOne : <<extend>>
+
+  Colors --> GetAll : <<extend>>
+  Colors --> GetOne : <<extend>>
+  Colors --> UpdateAll : <<extend>>
+  Colors --> UpdateOne : <<extend>>
+
+  FloatIn -- SQLCheckNote2
+  NonZeroFloatIn -- SQLCheckNote2
+  TextIn -- SQLCheckNote2
+}
+
+User --> Lg
+User --> Rg
+User --> GetAll
+User --> GetOne
+User --> UpdateAll
+User --> UpdateOne
+User --> Add
+User --> Delete
+User --> Update
+User --> Status
+User --> Colors
+
+Lg <-- Server
+Rg <-- Server
+GetAll <-- Server
+GetOne <-- Server
+UpdateAll <-- Server
+UpdateOne <-- Server
+Add <-- Server
+Delete <-- Server
+Update <-- Server
+Playground <-- Server
+
+@enduml

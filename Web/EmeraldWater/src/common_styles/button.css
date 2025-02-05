@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inder&family=Manuale:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+.base-rectangle-button {
+    background-color: #162938;
+    color: #ffffff;
+    border: none;
+    width: 23vw;
+    height: 3.25vw;
+    border-radius: 0.3vw;
+    font-family: "Inconsolata";
+    font-weight: 400;
+    font-size: 1.65vw;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.8s ease, color 0.8s ease;
+
+    box-shadow: #00000023 0px 0px 2px 0.5px;
+}
+
+.base-rectangle-button:hover {
+    background-color: #1a3347;
+    color: rgb(183, 255, 255);
+}
+
+.base-rectangle-button:active {
+    background-color: #162938;
+    color: rgb(57, 255, 206);
+}
+
+.base-azure-button {
+    box-shadow: none;
+    background-color: #5a94b6;
+    width: 23vw;
+    height: 3vw;
+}
+
+.base-azure-button:hover {
+    background-color: #4288B1;
+    color: #ffffff;
+    transform: scale(0.95);
+}
+
+.base-azure-button:active {
+    background-color: #4288B1;
+    color: rgb(57, 255, 255);
+}
+
+.base-scarlet-button {
+    box-shadow: none;
+    background-color: #893A3A;
+    width: 23vw;
+    height: 3vw;
+}
+
+.base-scarlet-button:hover {
+    background-color: #8B1A1A;
+    color: #ffffff;
+    transform: scale(0.95);
+}
+
+
+.base-scarlet-button:active {
+    background-color: #8B1A1A;
+    color: #ff6262;
+}

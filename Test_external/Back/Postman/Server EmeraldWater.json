@@ -1,0 +1,706 @@
+{
+  "info": {
+    "name": "Server EmeraldWater",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "bruno",
+      "event": []
+    },
+    {
+      "name": "Delete User",
+      "event": [],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwic3ViIjoiVGVzdDEyIiwiZXhwIjoxNzM3NDQ2NzczfQ.hEC0ov13yCyzvGvPpnsLq0vSDAerlM6gygmmbats-ZU",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/user",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Get Startup Time",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/get_startup_time",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "get_startup_time"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/token",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "token"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "",
+              "disabled": false,
+              "type": "default"
+            },
+            {
+              "key": "username",
+              "value": "Test12",
+              "disabled": false,
+              "type": "default"
+            },
+            {
+              "key": "password",
+              "value": "secret",
+              "disabled": false,
+              "type": "default"
+            },
+            {
+              "key": "scope",
+              "value": "",
+              "disabled": false,
+              "type": "default"
+            },
+            {
+              "key": "client_id",
+              "value": "",
+              "disabled": false,
+              "type": "default"
+            },
+            {
+              "key": "client_secret",
+              "value": "",
+              "disabled": false,
+              "type": "default"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Read Users Me",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{auth_token_by_collection}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/users/me",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "me"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Register",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/register",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "register"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "username",
+              "value": "Test12",
+              "disabled": false,
+              "type": "default"
+            },
+            {
+              "key": "password",
+              "value": "secret",
+              "disabled": false,
+              "type": "default"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "User Exist",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/user/exists?username=Test12",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user",
+            "exists?username=Test12"
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "Test12"
+            },
+            {
+              "key": "username",
+              "value": "Mia"
+            }
+          ],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "hydroponic",
+      "item": [
+        {
+          "name": "Add 0 25 Acid",
+          "event": [],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/:hydroponic_id/update/acidity/add_0_25",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                ":hydroponic_id",
+                "update",
+                "acidity",
+                "add_0_25"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "hydroponic_id",
+                  "value": "1059"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add 1 Celsius Temperature",
+          "event": [],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/:hydroponic_id/update/temperature/add_1_celsius",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                ":hydroponic_id",
+                "update",
+                "temperature",
+                "add_1_celsius"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "hydroponic_id",
+                  "value": "1059"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add 10 Percent Water",
+          "event": [],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/:hydroponic_id/update/water/add_10_percent",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                ":hydroponic_id",
+                "update",
+                "water",
+                "add_10_percent"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "hydroponic_id",
+                  "value": "1059"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add 5 Percent Minerals",
+          "event": [],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/:hydroponic_id/update/minerals/add_5_percent",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                ":hydroponic_id",
+                "update",
+                "minerals",
+                "add_5_percent"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "hydroponic_id",
+                  "value": "1059"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add 5 Percent Oxygen",
+          "event": [],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/:hydroponic_id/update/oxygen/add_5_percent",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                ":hydroponic_id",
+                "update",
+                "oxygen",
+                "add_5_percent"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "hydroponic_id",
+                  "value": "1059"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add Hydroponic",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/add",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                "add"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"TestHydroponic\",\n  \"water_amount\": \"1000\",\n  \"water_consumption\": \"1\",\n  \"minerals_amount\": \"1000\",\n  \"minerals_optimal\": \"1\",\n  \"minerals_consumption\": \"1\",\n  \"acidity_optimal_ph\": \"10\",\n  \"temperature_C_optimal\": \"14\",\n  \"oxygen_amount\": \"100\",\n  \"oxygen_consumption\": \"0.01\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete Hydroponic",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/:hydroponic_id",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                ":hydroponic_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "hydroponic_id",
+                  "value": "1058"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Hydroponics",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/all",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                "all"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Get Hydroponic By Id",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/:hydroponic_id",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                ":hydroponic_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "hydroponic_id",
+                  "value": "1059"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Lower 0 25 Acid",
+          "event": [],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/:hydroponic_id/update/acidity/lower_0_25",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                ":hydroponic_id",
+                "update",
+                "acidity",
+                "lower_0_25"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "hydroponic_id",
+                  "value": "1059"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Lower 1 Celsius Temperature",
+          "event": [],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/:hydroponic_id/update/temperature/lower_1_celsius",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                ":hydroponic_id",
+                "update",
+                "temperature",
+                "lower_1_celsius"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "hydroponic_id",
+                  "value": "1059"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Reset Hydroponic",
+          "event": [],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "{{auth_token_by_collection}}",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/hydroponic/reset/:hydroponic_id",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hydroponic",
+                "reset",
+                ":hydroponic_id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "hydroponic_id",
+                  "value": "1059"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "auth_token_by_collection",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

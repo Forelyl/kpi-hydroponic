@@ -1,0 +1,16 @@
+meta {
+  name: User Exist
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/user/exists?username=Test12
+  body: none
+  auth: none
+}
+
+params:query {
+  username: Test12
+  ~username: Mia
+}

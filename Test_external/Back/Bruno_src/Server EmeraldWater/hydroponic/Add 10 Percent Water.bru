@@ -1,0 +1,19 @@
+meta {
+  name: Add 10 Percent Water
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl}}/api/hydroponic/:hydroponic_id/update/water/add_10_percent
+  body: none
+  auth: bearer
+}
+
+params:path {
+  hydroponic_id: 1059
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}

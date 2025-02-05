@@ -1,0 +1,19 @@
+meta {
+  name: Add 1 Celsius Temperature
+  type: http
+  seq: 8
+}
+
+patch {
+  url: {{baseUrl}}/api/hydroponic/:hydroponic_id/update/temperature/add_1_celsius
+  body: none
+  auth: bearer
+}
+
+params:path {
+  hydroponic_id: 1059
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}

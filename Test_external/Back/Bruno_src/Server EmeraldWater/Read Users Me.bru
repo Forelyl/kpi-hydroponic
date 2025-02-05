@@ -1,0 +1,15 @@
+meta {
+  name: Read Users Me
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/users/me
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}

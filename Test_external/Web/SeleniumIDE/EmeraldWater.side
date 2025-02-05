@@ -1,0 +1,412 @@
+{
+  "id": "3ac60ef2-7b66-4f9c-b4c4-1dfb0a477ba5",
+  "version": "2.0",
+  "name": "EmeraldWater",
+  "url": "http://127.0.0.1:5173/",
+  "tests": [{
+    "id": "71cc56da-7d65-4e1d-95a6-5ceb476e3d4e",
+    "name": "Try login",
+    "commands": [{
+      "id": "97023889-704e-463d-9417-fcefdb15928a",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5173/src/pages/login/login.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "64507791-77a0-4ce1-846b-6ec1ef431119",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "14d1838f-fb4a-4106-8c59-931240509122",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Mia"
+    }, {
+      "id": "c0dd46cc-daa1-4b90-811d-9ebd3c55d2fd",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b0de007-900f-4d46-88d0-e60a6d41db9e",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "secret"
+    }, {
+      "id": "94e05c12-4fad-436b-82d5-3278269eeff9",
+      "comment": "",
+      "command": "click",
+      "target": "id=apply-button",
+      "targets": [
+        ["css=svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "05d98be5-734c-4764-8692-b20e197555b3",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=main-header",
+      "targets": [
+        ["css=main-header", "css:finder"],
+        ["xpath=//header[@id='main-header']/main-header", "xpath:idRelative"],
+        ["xpath=//main-header", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5c93d0d1-87e5-4841-a21d-7825bf56267c",
+    "name": "Try unlogin",
+    "commands": [{
+      "id": "e4fd479e-707f-4a0a-a868-8657883b52f2",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5173/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f21cd4c8-68e5-45da-834b-95a8d99b4c76",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1056x712",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "05fe53e9-ae18-4ea9-b1ae-04f3e21e0b18",
+      "comment": "",
+      "command": "click",
+      "target": "id=apply-button",
+      "targets": [
+        ["id=apply-button", "id"],
+        ["css=#apply-button", "css:finder"],
+        ["xpath=//button[@id='apply-button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Exit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cda1788a-f2ab-48af-9b14-c5b6123c5277",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "14737073-f69d-4782-a3bd-8d91a16c635b",
+    "name": "Increase water amount",
+    "commands": [{
+      "id": "dad57773-a6f0-44ff-bf0f-7c1bd2bbc33d",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5173/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f676078-9a97-4cc2-962d-731fae6107b8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1151x691",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9661cbf-bff9-4015-92cc-caee718073a4",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=hydroponic-0",
+      "targets": [
+        ["id=hydroponic-0", "id"],
+        ["css=#hydroponic-0", "css:finder"],
+        ["xpath=//hydroponic-iter[@id='hydroponic-0']", "xpath:attributes"],
+        ["xpath=//hydroponic-iter", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28cf86ee-4519-4712-b110-af1f0a68ecc8",
+      "comment": "",
+      "command": "click",
+      "target": "id=button-add-water",
+      "targets": [
+        ["id=button-add-water", "id"],
+        ["css=#button-add-water", "css:finder"],
+        ["xpath=//button[@id='button-add-water']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add water (10%)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "107a0e78-ea6c-4cf4-9afa-b39248477c71",
+      "comment": "",
+      "command": "click",
+      "target": "id=button-add-water",
+      "targets": [
+        ["id=button-add-water", "id"],
+        ["css=#button-add-water", "css:finder"],
+        ["xpath=//button[@id='button-add-water']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add water (10%)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f507e3f-bc33-4339-8929-d0f59d4c4252",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=button-add-water",
+      "targets": [
+        ["id=button-add-water", "id"],
+        ["css=#button-add-water", "css:finder"],
+        ["xpath=//button[@id='button-add-water']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add water (10%)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "82d99fd7-cfb0-4488-80c9-6175b2561533",
+      "comment": "",
+      "command": "click",
+      "target": "id=button-add-water",
+      "targets": [
+        ["id=button-add-water", "id"],
+        ["css=#button-add-water", "css:finder"],
+        ["xpath=//button[@id='button-add-water']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add water (10%)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a641366-c3da-4190-9053-9ad15da9bb58",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "37fa2c27-d13f-4822-ad2d-c984d6d2ffa3",
+    "name": "Add new",
+    "commands": [{
+      "id": "cc481704-6bd9-4b9f-8d5f-0b2175eecd40",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5173/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0c1b9b17-c580-48fa-9dbe-f1f24a8ccc24",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1151x691",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48ed2216-0c47-411f-b566-5288a19a3b4f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.add-icon",
+      "targets": [
+        ["css=.add-icon", "css:finder"],
+        ["xpath=//img[@alt='add']", "xpath:img"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f36fcf0e-afbc-412b-930b-259eec3853f4",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(3)",
+      "targets": [
+        ["css=trio-input:nth-child(3)", "css:finder"],
+        ["xpath=//trio-input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3434d980-f4e4-475a-aa7a-530f8acddf91",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(3)",
+      "targets": [
+        ["css=trio-input:nth-child(3)", "css:finder"],
+        ["xpath=//trio-input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5031bb77-b483-4864-b786-5f02d3c2673e",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(3)",
+      "targets": [
+        ["css=trio-input:nth-child(3)", "css:finder"],
+        ["xpath=//trio-input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3698d11c-9ede-4a3f-9616-c51e69a92263",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(4)",
+      "targets": [
+        ["css=trio-input:nth-child(4)", "css:finder"],
+        ["xpath=//trio-input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0958dc4e-7ba2-4e8f-94e1-f8eed2c951e1",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(4)",
+      "targets": [
+        ["css=trio-input:nth-child(4)", "css:finder"],
+        ["xpath=//trio-input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "70343187-b684-41e1-aa21-98e01fbf683d",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(4)",
+      "targets": [
+        ["css=trio-input:nth-child(4)", "css:finder"],
+        ["xpath=//trio-input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e7eb1a9-5cc6-4fb8-ba89-666658c357a4",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(4)",
+      "targets": [
+        ["css=trio-input:nth-child(4)", "css:finder"],
+        ["xpath=//trio-input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6b54739-58f9-49c3-8a55-65d1dfbd2705",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(4)",
+      "targets": [
+        ["css=trio-input:nth-child(4)", "css:finder"],
+        ["xpath=//trio-input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c38ecf6a-ebff-495f-95d9-0280e1f6e8c7",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(4)",
+      "targets": [
+        ["css=trio-input:nth-child(4)", "css:finder"],
+        ["xpath=//trio-input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7b8db1d-8be5-4bc9-9927-053490ce1cb0",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(5)",
+      "targets": [
+        ["css=trio-input:nth-child(5)", "css:finder"],
+        ["xpath=//trio-input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3cc62d05-3f92-464f-8aca-ec805f222454",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(5)",
+      "targets": [
+        ["css=trio-input:nth-child(5)", "css:finder"],
+        ["xpath=//trio-input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "535a7a42-70d6-461b-bc1a-dc3d43b04df4",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(6)",
+      "targets": [
+        ["css=trio-input:nth-child(6)", "css:finder"],
+        ["xpath=//trio-input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "695a901b-a995-426b-a4b0-d7a24f568f0e",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(6)",
+      "targets": [
+        ["css=trio-input:nth-child(6)", "css:finder"],
+        ["xpath=//trio-input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4790e0ef-ef4d-4a81-998a-d7506b6502e1",
+      "comment": "",
+      "command": "click",
+      "target": "css=trio-input:nth-child(6)",
+      "targets": [
+        ["css=trio-input:nth-child(6)", "css:finder"],
+        ["xpath=//trio-input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb243fde-c087-4681-a46f-5e6c35a4888f",
+      "comment": "",
+      "command": "click",
+      "target": "id=apply-button",
+      "targets": [
+        ["id=apply-button", "id"],
+        ["css=#apply-button", "css:finder"],
+        ["xpath=//button[@id='apply-button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6109e942-1c01-4741-a1b0-0ad87f608c8a",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1f2e06ce-77c5-467b-8697-9233c7658d7e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["71cc56da-7d65-4e1d-95a6-5ceb476e3d4e"]
+  }],
+  "urls": ["http://127.0.0.1:5173/"],
+  "plugins": []
+}

@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "server"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = {extras = ["standard"], version = "^0.115.6"}
+granian = {extras = ["reload"], version = "^1.7.4"}
+pyjwt = "^2.10.1"
+passlib = {extras = ["argon2"], version = "^1.7.4"}
+argon2-cffi = "^23.1.0"
+pymssql = "^2.3.2"
+sqlmodel = "^0.0.22"
+
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.6.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+run_dev         = "scripts:start_server_dev"
+run             = "scripts:start_server_prod"

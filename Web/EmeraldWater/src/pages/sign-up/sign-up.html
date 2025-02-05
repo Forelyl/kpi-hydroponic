@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/src/common_scripts/loader-includer.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmeraldWater - sign up</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inder&family=Manuale:ital,wght@0,300..800;1,300..800&display=swap');
+  </style>
+  <link rel="stylesheet" href="/src/pages/sign-up/sign-up.css">
+  <link rel="stylesheet" href="/src/common_styles/button.css">
+</head>
+<body style="visibility: hidden;">
+  <main-header></main-header>
+
+  <main>
+    <div class="sign-up-container">
+      <h2>
+        Sign Up
+      </h2>
+
+      <div class="sign-up-body-container">
+        <div class="sign-up-input-group">
+          <input type="text" id="login" placeholder="Login" pattern="[a-zA-Z0-9_\.]+" minlength="1" maxlength="120" autocomplete="off" required/>
+          <img src="/public/Id.svg" alt="login-icon">
+          <div class="input-underline"></div>
+          <div class="underline-error" id="username-taken-error">Username is already taken</div>
+        </div>
+        <div class="sign-up-input-group">
+          <input type="password" id="password" placeholder="Password" minlength="1" maxlength="120" autocomplete="new-password" required/>
+          <button id="password-toggle">
+            <img src="/public/Password.svg" alt="Closed password lock">
+          </button>
+          <div class="input-underline"></div>
+          <div class="underline-error">NO ERROR</div>
+        </div>
+
+      </div>
+
+      <div class="buttons-container">
+        <div>
+          <button id="to-login">
+            <svg fill="#162938" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80px" height="80px" viewBox="0 0 461.759 461.759" xml:space="preserve">
+              <path d="M0,301.058h147.916v147.919H0V301.058z M194.432,448.977H342.35V301.058H194.432V448.977z M2.802,257.347h147.916V109.434
+              H2.802V257.347z M325.476,92.219l-51.603-79.437l-79.441,51.601l51.604,79.437L325.476,92.219z M219.337,213.733l71.045,62.663
+              l62.66-71.039l-71.044-62.669L219.337,213.733z M412.107,57.967l-80.668,49.656l49.652,80.666l80.668-49.65L412.107,57.967z"/>
+            </svg>
+          </button>
+        </div>
+        <button class="base-rectangle-button" id="apply-button">Sign Up</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="/src/pages/sign-up/sign-up.js"></script>
+  <script src="/src/component/single/home-button/home-button.js"></script>
+  <script src="/src/component/single/main-header/main-header.js"></script>
+</body>
+</html>

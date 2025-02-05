@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/src/common_scripts/loader-includer.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmeraldWater - logout</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inder&family=Manuale:ital,wght@0,300..800;1,300..800&display=swap');
+  </style>
+  <link rel="stylesheet" href="/src/pages/logout/logout.css">
+  <link rel="stylesheet" href="/src/common_styles/button.css">
+
+  <script src="/src/common_scripts/token_worker.js"></script>
+</head>
+<body style="visibility: hidden;">
+  <home-button></home-button>
+  <main-header></main-header>
+
+  <main>
+    <div class="logout-container">
+      <h2>
+        Current account
+      </h2>
+      <div class="logout-body-container">
+        <div id="account-name">
+          ---
+        </div>
+        <div class="account-underline"></div>
+      </div>
+      <div class="apply-container">
+        <button class="base-rectangle-button" id="apply-button">Exit</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="/src/pages/logout/logout.js"></script>
+  <script src="/src/component/single/home-button/home-button.js"></script>
+  <script src="/src/component/single/main-header/main-header.js"></script>
+</body>
+</html>

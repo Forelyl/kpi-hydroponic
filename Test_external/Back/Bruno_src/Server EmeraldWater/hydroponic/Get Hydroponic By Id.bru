@@ -1,0 +1,19 @@
+meta {
+  name: Get Hydroponic By Id
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/hydroponic/:hydroponic_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  hydroponic_id: 1059
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}

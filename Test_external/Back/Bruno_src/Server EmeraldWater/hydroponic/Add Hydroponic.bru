@@ -1,0 +1,30 @@
+meta {
+  name: Add Hydroponic
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/hydroponic/add
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}
+
+body:json {
+  {
+    "name": "TestHydroponic",
+    "water_amount": "1000",
+    "water_consumption": "1",
+    "minerals_amount": "1000",
+    "minerals_optimal": "1",
+    "minerals_consumption": "1",
+    "acidity_optimal_ph": "10",
+    "temperature_C_optimal": "14",
+    "oxygen_amount": "100",
+    "oxygen_consumption": "0.01"
+  }
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Add 5 Percent Oxygen
+  type: http
+  seq: 12
+}
+
+patch {
+  url: {{baseUrl}}/api/hydroponic/:hydroponic_id/update/oxygen/add_5_percent
+  body: none
+  auth: bearer
+}
+
+params:path {
+  hydroponic_id: 1059
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}

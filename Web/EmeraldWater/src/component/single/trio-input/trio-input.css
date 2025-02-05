@@ -1,0 +1,151 @@
+:host {
+
+  display: grid;
+  grid-template-columns: 7% 93%;
+  align-items: center;
+  width: 95%;
+  height: 29vw;
+  gap: 0%;
+  padding: 2vw 0 2vw 0%;
+}
+
+.line-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 2vw;
+  width: 100%;
+  height: 100%;
+}
+
+.triangle {
+  /* width: 0;
+  height: 0;
+  border-left: 1vw solid transparent;
+  border-right: 1vw solid transparent;
+  border-bottom: 2vw solid #E9E9E9;
+  rotate: 180deg; */
+
+  width: 2vw;
+  height: 2vw;
+
+}
+
+.vertical-line {
+  width: 0.35vw;
+  background: #E9E9E9;
+  flex-grow: 1;
+  transform: scaleY(1.1);
+  margin-left: -0.07vw;
+}
+
+.circle {
+  width: 2vw;
+  height: 2vw;
+  background: #E9E9E9;
+  border-radius: 100%;
+}
+
+/* ------------------------------------------ */
+
+.inputs-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 90%;
+}
+
+.input-group {
+  width: calc(100% - 4vw);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  padding: 0 2vw;
+}
+
+/* ------------------------------------------- */
+
+.top-input-group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 2.6vw;
+
+  color: #fff;
+}
+
+.input-icon  {
+  justify-self: self-start;
+  align-self: flex-start;
+
+  margin-left: -0.25vw;
+  margin-right: 1.5vw;
+  height: calc(100% - 0.4vw);
+  margin-bottom: 0.4vw;
+
+}
+.input {
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: #fff;
+
+  font-size: 1.7vw;
+  padding: 0;
+
+  outline: none;
+  width: 100%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ------------------------------------------- */
+
+.input-line {
+  width: 100%;
+  height: 3%;
+
+  background-image: linear-gradient(90deg, rgb(255, 38, 85), rgb(255, 0, 191), #29d5cd, #52fff6, #fff, #fff);
+  background-size: 500%;
+  background-repeat: no-repeat;
+  background-position: 100%;
+}
+
+.input-line.loaded {
+  transition: background-position 1s ease-in-out;
+}
+
+.input-label {
+  width: 100%;
+  font-family: 'Inconsolata';
+  letter-spacing: 0.1vw;
+  font-size: 1.2vw;
+  font-weight: 300;
+}
+
+
+.input-group:has(.input:focus) .input-line {
+  background-position: 50%;
+}
+
+.input-group:has(>.top-input-group > .invalid) .input-line {
+  background-position: 0%;
+  transition: background-position 0.25s ease-in-out;
+}

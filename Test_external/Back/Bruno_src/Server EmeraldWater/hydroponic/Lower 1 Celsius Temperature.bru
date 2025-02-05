@@ -1,0 +1,19 @@
+meta {
+  name: Lower 1 Celsius Temperature
+  type: http
+  seq: 9
+}
+
+patch {
+  url: {{baseUrl}}/api/hydroponic/:hydroponic_id/update/temperature/lower_1_celsius
+  body: none
+  auth: bearer
+}
+
+params:path {
+  hydroponic_id: 1059
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}

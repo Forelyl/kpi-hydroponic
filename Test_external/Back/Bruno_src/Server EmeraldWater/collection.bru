@@ -1,0 +1,24 @@
+auth {
+  mode: oauth2
+}
+
+auth:oauth2 {
+  grant_type: password
+  access_token_url: http://127.0.0.1:6789/token
+  username: Mia
+  password: secret
+  client_id: 
+  client_secret: 
+  scope: 
+}
+
+vars:pre-request {
+  baseUrl: http://127.0.0.1:6789
+}
+
+script:post-response {
+  // get auth token
+  if (req.getAuthMode() == "oauth2" && res.body.access_token) {
+    bru.setVar('auth_token_by_collection', res.body.access_token);
+  }
+}

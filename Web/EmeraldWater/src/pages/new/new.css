@@ -1,0 +1,25 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 3vh 0 12vh 0;
+  background-color: #405868;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 7vw;
+  }
+}
+
+.apply-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4.5vw;
+}

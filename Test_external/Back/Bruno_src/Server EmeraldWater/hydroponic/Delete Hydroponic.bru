@@ -1,0 +1,19 @@
+meta {
+  name: Delete Hydroponic
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/api/hydroponic/:hydroponic_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  hydroponic_id: 1058
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}

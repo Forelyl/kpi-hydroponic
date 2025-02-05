@@ -1,0 +1,44 @@
+.vertical-block {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3vw;
+}
+
+.vertical-text-line {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: end;
+  gap: 1vw;
+  height: calc(100% - 4vh);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  font-family: "Inconsolata";
+  font-weight: 400;
+  font-size: 2.5vw;
+  line-height: 2.5vw;
+  transition: color 0.4s ease-in-out;
+  margin-bottom: 4vh;
+  height: calc(100% - 4vh);
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.vertical-icon {
+  width: 2.5vw;
+  object-fit: contain;
+}
+
+.vertical-line {
+  border-right: 3px solid #D9D9D9;
+  height: 100%;
+}

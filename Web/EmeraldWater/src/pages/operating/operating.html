@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/src/common_scripts/loader-includer.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmeraldWater - operating</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inder&family=Manuale:ital,wght@0,300..800;1,300..800&display=swap');
+  </style>
+  <link rel="stylesheet" href="/src/pages/operating/operating.css">
+  <link rel="stylesheet" href="/src/common_styles/button.css">
+
+  <script src="/src/common_scripts/token_worker.js"></script>
+</head>
+<body style="visibility: hidden;">
+  <home-button></home-button>
+  <header>
+    <horizontal-text text="Smart Hydroponic XarmM12"></horizontal-text>
+  </header>
+
+  <h2 class="operating-header">
+    Water tank
+  </h2>
+  <div class="indicator-type-a">
+    <solid-progress-bar
+      value="0%"
+      percentage="0%"
+      bg-color="#7fb5c8"
+      upper-float-text="1200ml"
+      id="water-tank-progress-bar"
+    ></solid-progress-bar>
+    <button class="base-rectangle-button" id="button-add-water">Add water (10%)</button>
+  </div>
+
+  <h2 class="operating-header">
+    Minerals
+  </h2>
+  <div class="indicator-type-a">
+    <progress-bar
+      class="indicator"
+      value="0%"
+      percentage="0"
+      bg-color="#e57373"
+      img="/public/Minerals.svg"
+      id="mineral-progress-bar"
+    ></progress-bar>
+    <button class="base-rectangle-button" id="button-add-mineral">Add minerals (5%)</button>
+  </div>
+
+  <h2 class="operating-header">
+    Temperature
+  </h2>
+  <div class="indicator-type-b">
+    <progress-bar
+      class="indicator"
+      value="5°C"
+      percentage="0"
+      bg-color="#7fc895"
+      img="/public/Temperature.svg"
+      id="temperature-progress-bar"
+    ></progress-bar>
+    <div class="indicator-type-b-controls">
+      <button class="base-rectangle-button" id="button-lower-temperature">Lower(1°C)</button>
+      <button class="base-rectangle-button" id="button-add-temperature">Add (1°C)</button>
+    </div>
+  </div>
+
+  <h2 class="operating-header">
+     Acidness
+  </h2>
+  <div class="indicator-type-b">
+    <progress-bar
+      class="indicator"
+      value="0.0"
+      percentage="0"
+      bg-color="#24d539"
+      img="/public/Acidness.svg"
+      id="acidity-progress-bar"
+    ></progress-bar>
+    <div class="indicator-type-b-controls">
+      <button class="base-rectangle-button" id="button-add-acidity">Add acid (0.25)</button>
+      <button class="base-rectangle-button" id="button-lower-acidity">Add base (0.25)</button>
+    </div>
+  </div>
+
+  <h2 class="operating-header">
+    Oxygen tank
+ </h2>
+ <div class="indicator-type-a">
+    <progress-bar
+      class="indicator"
+      value="0%"
+      percentage="0"
+      bg-color="#947fc8"
+      img="/public/Oxygen.svg"
+      id="oxygen-progress-bar"
+    ></progress-bar>
+    <button class="base-rectangle-button" id="button-add-oxygen">Add oxygen (5%)</button>
+   </div>
+ </div>
+
+  <h2 class="operating-header">
+    Controls
+  </h2>
+  <div class="type-c-controls">
+    <button class="base-azure-button base-rectangle-button" id="button-reload">Reload</button>
+    <button class="base-scarlet-button base-rectangle-button" id ="button-delete">Delete</button>
+  </div>
+
+  <script src="/src/component/single/solid-progress-bar/solid-progress-bar.js"></script>
+  <script src="/src/pages/operating/operating.js" type="module"></script>
+  <script src="/src/component/single/horizontal-text/horizontal-text.js"></script>
+  <script src="/src/component/single/home-button/home-button.js"></script>
+  <script src="/src/component/single/progress-bar/progress-bar.js"></script>
+</bodys>
+</html>

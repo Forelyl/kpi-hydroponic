@@ -1,0 +1,19 @@
+meta {
+  name: Lower 0 25 Acid
+  type: http
+  seq: 11
+}
+
+patch {
+  url: {{baseUrl}}/api/hydroponic/:hydroponic_id/update/acidity/lower_0_25
+  body: none
+  auth: bearer
+}
+
+params:path {
+  hydroponic_id: 1059
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}

@@ -1,0 +1,5 @@
+1. Open and run! PrepareServer
+2. Make reconfigure (step 11)
+
+3. Open tSQLt.class.sql, add as first line: use DatabaseName;
+   Run file

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/src/common_scripts/loader-includer.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmeraldWater - add new hydroponic</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inder&family=Manuale:ital,wght@0,300..800;1,300..800&display=swap');
+  </style>
+  <link rel="stylesheet" href="/src/pages/new/new.css">
+  <link rel="stylesheet" href="/src/common_styles/button.css">
+
+  <script src="/src/common_scripts/token_worker.js"></script>
+</head>
+<body style="visibility: hidden;">
+  <home-button></home-button>
+
+  <header>
+    <img src="/public/New.svg" alt="New page header icon">
+  </header>
+
+  <trio-input
+    type1="text"        id1="name"                     label1="Name (max: 120 symbols)"
+    type2="ufloat"      id2="water_amount"             label2="Amount of water (ml)"
+    type3="ufloat"      id3="water_consumption"        label3="Speed of water consumtion (ml/s)"
+  ></trio-input>
+  <trio-input
+    type1="ufloat"      id1="minerals_amount"          label1="Max Amount of minerals (ml)"
+    type2="ufloat"      id2="minerals_optimal"         label2="Optimal amount of minerals (ml/ml)"
+    type3="ufloat"      id3="minerals_consumption"     label3="Speed of mineral's consumption (ml/s)"
+  ></trio-input>
+  <trio-input
+    type1="ufloat"      id1="oxygen_amount"            label1="Max Amount of oxygen (ml)"
+    type2="ufloat"      id2="oxygen_consumption"       label2="Speed of oxygen consumption (ml/s)"
+  ></trio-input>
+  <trio-input
+    type1="acidness"    id1="acidity_optimal_ph"       label1="Optimal pH (pH)"
+    type2="celsius"     id2="temperature_C_optimal"    label2="Optimal temperature (°C)"
+  ></trio-input>
+
+  <div class="apply-container">
+    <button class="base-rectangle-button" id="apply-button">Add</button>
+  </div>
+
+  <script src="/src/component/single/horizontal-text/horizontal-text.js"></script>
+  <script src="/src/component/single/home-button/home-button.js"></script>
+  <script src="/src/component/single/solid-progress-bar/solid-progress-bar.js"></script>
+  <script src="/src/component/single/progress-bar/progress-bar.js"></script>
+  <script src="/src/component/single/trio-input/trio-input.js"></script>
+  <script src="/src/pages/new/new.js"></script>
+</body>
+</html>

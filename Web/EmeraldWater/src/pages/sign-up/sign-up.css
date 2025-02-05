@@ -1,0 +1,186 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+  margin: 3vh 0 0 0;
+  background-color: #405868;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 97vh;
+  overflow: hidden;
+}
+
+main-header {
+  height: 10vw; /* component size - use to make more centric main */
+}
+
+main {
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.sign-up-container {
+  background-color: #d9d9d9;
+  width: 40vw;
+  height: 33vw;
+  border-radius: 1vw;
+  transform: translateY(-1.5vw);
+
+  box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+
+  padding: 3vw;
+}
+
+.sign-up-body-container {
+  width: 100%;
+  height: 20vw;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-around;
+}
+
+.sign-up-container > h2 {
+  padding: 0;
+  margin: 0;
+  font-family: "Inder";
+  font-weight: 400;
+  font-size: 4vw;
+  color: #162938;
+  text-align: center;
+}
+
+.sign-up-input-group {
+  width: 90%;
+  display: grid;
+  grid-template: 3.5vw 0.31vw / 90% 10%;
+  > button {
+    all: unset;
+    cursor: pointer;
+
+    position: relative;
+
+    > img {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  > button:hover {
+    transform: scale(0.9);
+  }
+  img {
+    height: 2.5vw;
+    transform: translateY(0.5vw);
+  }
+
+  > input {
+    all: unset;
+    width: auto;
+    height: 3vw;
+
+    color: #162938;
+    font-family: "Inder";
+    font-size: 2.2vw;
+    font-weight: 400;
+
+    align-self: flex-end;
+  }
+  > input:-webkit-autofill,
+  > input:-webkit-autofill:focus {
+    /* Ethernet found workaround for autofill css */
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+  }
+  > input::placeholder {
+    color: #808990;
+    font-family: "Inder";
+    font-size: 2.2vw;
+    font-weight: 400;
+  }
+  > .input-underline {
+    background-color: #162938;
+    width: 100%;
+    height: 100%;
+    border-radius: 1vw;
+
+    grid-column: 1 / 3;
+    transition: background-color 0.25s ease-in-out;
+  }
+
+  > .underline-error {
+    visibility: hidden;
+    color: #a01010;
+    font-family: "Inder";
+    font-size: 1vw;
+    font-weight: 400;
+  }
+
+  > .underline-error.active {
+    visibility: visible;
+  }
+}
+
+.sign-up-input-group:has(> .invalid), .sign-up-input-group:has(> .underline-error.active) {
+  > .input-underline {
+    background-color: #a01010;
+  }
+}
+
+
+.buttons-container {
+  height: 20%;
+  width: 90%;
+
+  display: grid;
+  grid-template: 1fr / 40% 60%;
+  align-items: center;
+  justify-items: center;
+
+
+  > button {
+    width: 100%;
+    height: 4vw;
+    font-size: 2vw;
+    justify-self: self-start;
+  }
+  > div {
+    all: unset;
+
+    width: 4vw;
+    height: 4vw;
+    margin-left: -3vw;
+
+    > button {
+      all: unset;
+      cursor: pointer;
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      > svg {
+        height: 4vw;
+        aspect-ratio: 1;
+        transition: fill 0.5s ease-in-out;
+      }
+    }
+    > button:hover > svg {
+      fill: #0f8294;
+    }
+  }
+}

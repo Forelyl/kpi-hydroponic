@@ -1,0 +1,26 @@
+.container {
+    margin: 0 2vw;
+    width: calc(100% - 4vw);
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    align-items: center;
+    justify-items: center;
+}
+
+/* .icon-container {
+} */
+
+.icon {
+    width: 7vw;
+}
+
+.header-title {
+    font-family: 'Inder';
+    font-size: 3vw;
+    font-weight: 200;
+    letter-spacing: 0.1vw;
+    color: #fff;
+    > span {
+        color: #00ffb2;
+    }
+}

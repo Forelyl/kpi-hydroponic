@@ -1,0 +1,15 @@
+meta {
+  name: Get All Hydroponics
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/hydroponic/all
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}

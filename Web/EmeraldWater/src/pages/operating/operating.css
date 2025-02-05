@@ -1,0 +1,56 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 3vh 0 12vh 0;
+  background-color: #405868;
+}
+
+.operating-header {
+  color: rgb(255, 255, 255);
+  font-family: 'Manuale';
+  font-size: 3.25vw;
+  font-weight: 300;
+  margin-left: 2vw;
+}
+
+.indicator {
+  margin-bottom: 3vw;
+}
+
+.indicator-type-a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicator-type-b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicator-type-b-controls {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.type-c-controls {
+  padding: 0 10%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+#water-tank-progress-bar {
+  width: 90%;
+}

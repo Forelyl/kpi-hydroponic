@@ -1,0 +1,19 @@
+meta {
+  name: Reset Hydroponic
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/api/hydroponic/reset/:hydroponic_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  hydroponic_id: 1059
+}
+
+auth:bearer {
+  token: {{auth_token_by_collection}}
+}

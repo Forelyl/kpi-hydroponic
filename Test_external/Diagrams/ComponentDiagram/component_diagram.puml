@@ -1,0 +1,87 @@
+@startuml
+database "MS SQL" { 
+  [Database]
+}
+
+UserTable -- [MS SQL]
+HydroponicTable -- [MS SQL]
+
+
+package "Server" {
+  package "Security" {
+    [PasswordHasher]
+    [JSON Web token worker]
+    [SecurityAPI - login/register/authorize] as SecurityAPI
+    
+    [PasswordHasher] --o SecurityAPI
+    [JSON Web token worker] --o SecurityAPI
+  }
+  SecurityProvider -- SecurityAPI
+  Hashing -- PasswordHasher
+  SecurityAPI ..> UserWrapped: use
+  Authentication -- SecurityAPI
+  
+  
+  package "DatabaseClient" {
+    [DatabaseDriver]
+    [DatabaseWrapper]
+    package "IoTPlayground" {
+      [Playground]
+    }  
+    [DatabaseDriver] -- HydroponicWrappedInner
+    [DatabaseDriver] ..> UserWrappedInner: use
+    [Playground] ..> HydroponicWrappedInner: use
+    [DatabaseWrapper] ..> UserWrappedInner: use
+    [DatabaseWrapper] ..> HydroponicWrappedInner: use
+  } 
+  [DatabaseDriver] ..> UserTable: use-database
+  [DatabaseDriver] ..> HydroponicTable: use-database
+  [DatabaseWrapper] ..> Hashing: use
+  
+  UserWrapped -- UserWrappedInner: repeat 
+  [DatabaseWrapper] -- InnerAPI
+  
+  package "API" {
+    [MainRouter]
+    [SecurityRouter]
+    [APIRouter]
+    
+    
+    [MainRouter] *-- [SecurityRouter]: include
+    [MainRouter] *-- [APIRouter]: include
+  }
+  [SecurityRouter] ..> SecurityProvider: use
+  [SecurityRouter] ..> Authentication: use
+  [APIRouter]      ..> SecurityProvider: use
+  [APIRouter]      ..> InnerAPI: use 
+
+}
+[MainRouter] -- APIEndpoints
+
+
+
+package "Client" {
+  [SimpleComponents]
+  [ComplexComponents]
+  [Pages]
+  [CommonStyles]
+  [CommonScripts]
+  node public
+  
+  Pages --o public: data 
+  SimpleComponents --o public: data 
+  ComplexComponents --o public: data 
+  
+  Pages --o CommonStyles: use
+  Pages --o ComplexComponents: use
+  Pages --o SimpleComponents: use
+  Pages --o CommonScripts: use
+  
+  ComplexComponents --* SimpleComponents
+  
+   
+}
+[CommonScripts] ..> APIEndpoints: use
+[Pages] ..> APIEndpoints: use
+
+@enduml
